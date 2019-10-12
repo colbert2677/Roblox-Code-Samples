@@ -2,7 +2,7 @@
 	@ Instance2
 	@ colbert2677
 	
-	# Library for improved instancing of objects.
+	Library for improved instancing of objects.
 --]]
 
 local Instance2 = {}
