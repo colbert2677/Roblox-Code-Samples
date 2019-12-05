@@ -10,8 +10,8 @@ Super.__tostring = tostringMetaFunc
 Super.__superproperty = "Abstract"
 
 local Sub = setmetatable({}, Super)
-Sub.__tostring = tostringMetaFunc
 Sub.__index = Sub
+Sub.__tostring = tostringMetaFunc
 
 function Super.new()
     return setmetatable({}, Super)
