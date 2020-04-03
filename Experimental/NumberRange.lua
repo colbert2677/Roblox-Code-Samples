@@ -1,4 +1,4 @@
--- Reproduction of NumberRange class
+-- Reproduction of NumberRange class out of boredom
 -- TODO: Reorganise
 
 local BAD_TYPE = "bad argument #%i to '%s' (%s expected, got %s)"
@@ -24,7 +24,7 @@ function NumberRange.new(min, max)
 end
 
 function NumberRange:__tostring()
-    return "NumberRange" -- TODO: Internal property
+    return "NumberRange" -- TODO: self.ClassName
 end
 
 local nums = NumberRange.new(1, 2)
