@@ -1,8 +1,9 @@
 --[[
 	@ Instance2
 	@ colbert2677
+	@ October 12, 2019
 	
-	Library for improved instancing of objects.
+	Library for improved object instancing.
 --]]
 
 local Instance2 = {}
@@ -19,7 +20,7 @@ function Instance2.new(className, parent)
 end
 
 -- Pass table of properties to be set, defer setting of parent
-function Instance2.create(className, properties)
+function Instance2.withProperties(className, properties)
 	local object = Instance.new(className)
 	local parent = properties.Parent or nil
 	
