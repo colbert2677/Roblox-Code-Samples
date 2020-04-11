@@ -1,0 +1,41 @@
+-- Badge Service
+-- colbert2677
+-- March 30, 2020
+
+-- Released for the sake of a discussion
+
+local BadgeService = {}
+
+
+local RobloxBadgeService = game:GetService("BadgeService")
+
+local legalBadges
+
+
+function BadgeService:Award(player, ...)
+	assert(typeof(player) == "Instance" and player:IsA("Player"))
+	
+	local userId = player.UserId
+	local badges = table.pack(...)
+	
+	for _, badgeAlias in ipairs(badges) do
+		local badgeId = legalBadges[badgeAlias]
+		if badgeId then
+			print("Awarding", userId, "badge", badgeId)
+			local success, ret = pcall(RobloxBadgeService.AwardBadge, RobloxBadgeService, userId, badgeId)
+			if success then
+				print("Successfully awarded badge (" .. badgeId .. " to user-" .. userId .. ")")
+			else
+				warn("Failed to award badge (" .. badgeId .. " to user-" .. userId .. ")\n" .. ret)
+			end
+		end
+	end
+end
+
+
+function BadgeService:Init()
+	legalBadges = self.Shared.Data_Badges
+end
+
+
+return BadgeService
