@@ -1,5 +1,6 @@
 --- Example of a retrying Promise.
 -- @see Promise https://github.com/evaera/roblox-lua-promise/blob/master/lib/init.lua
+-- @see https://discordapp.com/channels/385151591524597761/385151591998816257/744422476791939183
 
 local Promise = require(script.Parent.Promise)
 
