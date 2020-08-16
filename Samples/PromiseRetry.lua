@@ -10,23 +10,13 @@ local fails = 0
 
 --- Create a Promise that eventually resolves
 local function wontSucceedImmediately()
-	return Promise.new(function (resolve, reject)
-		local ok, result = pcall(function ()
-			if fails < SUCCEED_AFTER then
-				error("unsuccessful iteration")
-			end
-			
-			return "successful iteration"
-		end)
-		
-		if ok then
-			print("was ok")
-			resolve(result)
-		else
-			warn("was not ok")
-			fails = fails + 1
-			reject(result)
+	return Promise.new(function (resolve)
+		if fails > SUCCEED_AFTER then
+			resolve("was good")
 		end
+		
+		fails = fails + 1
+		error("unsuccessful iteration")
 	end)
 end
 
