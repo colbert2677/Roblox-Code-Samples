@@ -1,22 +1,22 @@
 --- Example superclass for inheritance example. Intended for OOP.
--- Uses the game/place relationship to be easier to understand.
--- @classmod Game
+-- @classmod Animal
 -- @author colbert2677
 
-local Game = {}
-Game.ClassName = "Game"
-Game.__index = Game
+local Animal = {}
+Animal.ClassName = "Animal"
+Animal.__index = Animal
 
-function Game:__tostring()
+function Animal:__tostring()
 	return self.ClassName
 end
 
-function Game.new(gameId)
+function Animal.new(species, name)
 	local self = setmetatable({
-			GameId = gameId
-		}, Game)
+			Species = species,
+			Name = name,
+		}, Animal)
 	
 	return self
 end
 
-return Game
+return Animal
