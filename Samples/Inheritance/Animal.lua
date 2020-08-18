@@ -19,4 +19,18 @@ function Animal.new(species, name)
 	return self
 end
 
+--- Unnecessary black magic spell only for demonstration's sake.
+-- Please just directly set properties. Don't take after this example.
+function Animal:ChangeSpecies(toSpecies)
+	local fromSpecies = self.Species
+	self.Species = toSpecies
+	
+	print(self.Name .. " became a " .. toSpecies .. " from a " .. fromSpecies .. "!")
+end
+
+function Animal:Destroy()
+	-- Must lose references afterward
+	setmetatable(self, nil)
+end
+
 return Animal
