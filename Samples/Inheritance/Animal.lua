@@ -10,7 +10,7 @@ function Animal:__tostring()
 	return self.ClassName
 end
 
-function Animal.new(species, name)
+function Animal.new(name, species)
 	local self = setmetatable({
 			Species = species,
 			Name = name,
