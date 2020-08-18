@@ -19,13 +19,12 @@ function Animal.new(name, species)
 	return self
 end
 
---- Unnecessary black magic spell only for demonstration's sake.
--- Please just directly set properties. Don't take after this example.
-function Animal:ChangeSpecies(toSpecies)
-	local fromSpecies = self.Species
-	self.Species = toSpecies
+--- Only for demonstration's sake. Please just directly set properties. Don't take after this example.
+function Animal:ChangeName(newName)
+	local oldName = self.Name
+	self.Name = newName
 	
-	print(self.Name .. " became a " .. toSpecies .. " from a " .. fromSpecies .. "!")
+	print(self.Name .. " changed their name from " .. oldName .. "!")
 end
 
 function Animal:Destroy()
