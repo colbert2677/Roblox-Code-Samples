@@ -2,7 +2,7 @@
 -- colbert2677
 -- March 30, 2020
 
--- Released for the sake of a discussion
+-- Released for the sake of a discussion. Intended for use with AeroGameFramework.
 
 local BadgeService = {}
 
