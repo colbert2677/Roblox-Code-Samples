@@ -1,4 +1,4 @@
---- Sample OOP class for Lua
+--- Sample OOP class for Lua.
 -- @classmod ClassModule
 -- @author colbert2677
 
