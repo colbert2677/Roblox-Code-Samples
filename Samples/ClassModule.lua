@@ -1,4 +1,5 @@
 --- Sample OOP class for Lua
+-- @classmod ClassModule
 -- @author colbert2677
 
 local Class = {}
@@ -12,6 +13,7 @@ function Class.new()
 	return self
 end
 
+--- Clean up object and detach from class.
 function Class:Destroy()
 	setmetatable(self, nil)
 end
