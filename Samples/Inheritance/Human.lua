@@ -12,8 +12,9 @@ function Human:__tostring()
 end
 
 --- Gender should probably be a property of Animal instead, but...
-function Human.new(gender)
+function Human.new(name, gender)
 	local self = setmetatable({
+			Name = name,
 			Gender = gender
 		}, Human)
 	
