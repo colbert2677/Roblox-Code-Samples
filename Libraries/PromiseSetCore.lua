@@ -5,7 +5,7 @@
 local StarterGui = game:GetService("StarterGui")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
-local Promise = require(ReplicatedStorage.Promise)
+local Promise = require(ReplicatedStorage:WaitForChild("Promise"))
 
 local MAX_RETRIES = 10
 
